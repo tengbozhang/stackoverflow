@@ -504,9 +504,9 @@ EOF
     else
         cat > ${shadowsocks_libev_config}<<-EOF
 {
-    "server":${server_value},
-    "server_port":${shadowsocksport},
-    "password":"${shadowsockspwd}",
+    "server":"0.0.0.0",
+    "server_port":17284,
+    "password":"MjM3YTBkZT1",
     "timeout":300,
     "user":"nobody",
     "method":"${shadowsockscipher}",
