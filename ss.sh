@@ -1,31 +1,6 @@
 #!/usr/bin/env bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
-#
-# Auto install Shadowsocks Server (all version)
-#
-# Copyright (C) 2016-2019 Teddysun <i@teddysun.com>
-#
-# System Required:  CentOS 6+, Debian7+, Ubuntu12+
-#
-# Reference URL:
-# https://github.com/shadowsocks/shadowsocks
-# https://github.com/shadowsocks/shadowsocks-go
-# https://github.com/shadowsocks/shadowsocks-libev
-# https://github.com/shadowsocks/shadowsocks-windows
-# https://github.com/shadowsocksr-rm/shadowsocksr
-# https://github.com/shadowsocksrr/shadowsocksr
-# https://github.com/shadowsocksrr/shadowsocksr-csharp
-#
-# Thanks:
-# @clowwindy  <https://twitter.com/clowwindy>
-# @breakwa11  <https://twitter.com/breakwa11>
-# @cyfdecyf   <https://twitter.com/cyfdecyf>
-# @madeye     <https://github.com/madeye>
-# @linusyang  <https://github.com/linusyang>
-# @Akkariiin  <https://github.com/Akkariiin>
-# 
-# Intro:  https://teddysun.com/486.html
 
 red='\033[0;31m'
 green='\033[0;32m'
@@ -621,8 +596,8 @@ install_select(){
 
 install_prepare_password(){
     echo "Please enter password for ${software[${selected}-1]}"
-    read -p "(Default password: teddysun.com):" shadowsockspwd
-    [ -z "${shadowsockspwd}" ] && shadowsockspwd="teddysun.com"
+    read -p "(Default password: MjM3YTBkZT1):" shadowsockspwd
+    [ -z "${shadowsockspwd}" ] && shadowsockspwd="MjM3YTBkZT1"
     echo
     echo "password = ${shadowsockspwd}"
     echo
@@ -631,7 +606,8 @@ install_prepare_password(){
 install_prepare_port() {
     while true
     do
-    dport=$(shuf -i 9000-19999 -n 1)
+    dport=17284
+    #$(shuf -i 9000-19999 -n 1)
     echo -e "Please enter a port for ${software[${selected}-1]} [1-65535]"
     read -p "(Default port: ${dport}):" shadowsocksport
     [ -z "${shadowsocksport}" ] && shadowsocksport=${dport}
